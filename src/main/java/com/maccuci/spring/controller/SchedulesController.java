@@ -18,7 +18,7 @@ public class SchedulesController {
     }
 
     @PostMapping
-    public ResponseEntity<ScheduleEntity> createScheduele(@RequestBody ScheduleEntity schedule) {
+    public ResponseEntity<ScheduleEntity> createSchedule(@RequestBody ScheduleEntity schedule) {
        ScheduleEntity newSchedule =  scheduleService.saveSchedule(schedule);
        return ResponseEntity.ok(newSchedule);
     }

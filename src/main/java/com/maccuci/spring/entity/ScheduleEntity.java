@@ -13,7 +13,6 @@ public class ScheduleEntity {
 
     @Id
     private Long id;
-
     @Column(name = "email_owner")
     private String emailOwner;
     private String service;
