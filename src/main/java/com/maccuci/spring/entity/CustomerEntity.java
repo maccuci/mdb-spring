@@ -11,8 +11,7 @@ public class CustomerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String email, phone;
-    private String name;
+    private String name, email, phone;
     @Column(name = "pet_name")
     private String petName;
     @Column(name = "pet_service")
