@@ -1,8 +1,6 @@
 package com.maccuci.spring.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 @Entity
@@ -10,11 +8,15 @@ import lombok.Getter;
 @Getter
 public class CustomerEntity {
 
-    @Getter
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email, phone;
-    private String name, petName, petService;
+    private String name;
+    @Column(name = "pet_name")
+    private String petName;
+    @Column(name = "pet_service")
+    private String petService;
 
     public CustomerEntity() {}
 
