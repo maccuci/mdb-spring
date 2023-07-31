@@ -19,13 +19,13 @@ public class SchedulesController {
 
     @PostMapping
     public ResponseEntity<ScheduleEntity> createScheduele(@RequestBody ScheduleEntity schedule) {
-       ScheduleEntity newSchedule =  scheduleService.saveCustomer(schedule);
+       ScheduleEntity newSchedule =  scheduleService.saveSchedule(schedule);
        return ResponseEntity.ok(newSchedule);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ScheduleEntity> findCustomerById(@PathVariable Long id) {
-        ScheduleEntity schedule = scheduleService.findCustomer(id);
+        ScheduleEntity schedule = scheduleService.findSchedule(id);
         return schedule != null ? ResponseEntity.ok(schedule) : ResponseEntity.notFound().build();
     }
 

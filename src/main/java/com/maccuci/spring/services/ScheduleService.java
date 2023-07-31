@@ -16,11 +16,11 @@ public class ScheduleService {
         this.repository = repository;
     }
 
-    public ScheduleEntity saveCustomer(ScheduleEntity schedule) {
+    public ScheduleEntity saveSchedule(ScheduleEntity schedule) {
         return repository.save(schedule);
     }
 
-    public ScheduleEntity findCustomer(Long id) {
+    public ScheduleEntity findSchedule(Long id) {
         return repository.findById(id).orElse(null);
     }
 
