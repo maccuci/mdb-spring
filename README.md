@@ -1,5 +1,6 @@
 # mdb-spring
 
+## Sobre
 API RESTful feita em Java usando Spring Boot, Spring Data, Hibernate e Mysql.
 
 Esta API foi feita para ser a peça principal do backend do projeto [Mundo dos Bichos](https://github.com/maccuci/mundo-dos-bichos/).
@@ -15,3 +16,15 @@ Como o banco de dados é **local**, não há necessidade de implementação de m
 _Usadas na versão 0.5.0 do projeto_
 
 ``localhost:3000/api/{"clientes", "agendamentos"}``
+
+## Banco de Dados
+
+Database
+
+![db](./assets/db.png)
+
+Customers table example
+![customers](./assets/customers.png)
+
+Schedules table example
+![schedules](./assets/schedules.png)
