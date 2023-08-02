@@ -29,6 +29,22 @@ public class SchedulesController {
         return schedule != null ? ResponseEntity.ok(schedule) : ResponseEntity.notFound().build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<ScheduleEntity> updateSchedule(@PathVariable Long id, @RequestBody ScheduleEntity schedule) {
+        ScheduleEntity existingSchedule = scheduleService.findSchedule(id);
+
+        if (existingSchedule == null) {
+            return ResponseEntity.notFound().build();
+        }
+        existingSchedule.setEmailOwner(schedule.getEmailOwner());
+        existingSchedule.setService(schedule.getService());
+        existingSchedule.setDate(schedule.getDate());
+        existingSchedule.setPrice(schedule.getPrice());
+
+        ScheduleEntity updatedSchedule = scheduleService.saveSchedule(existingSchedule);
+        return ResponseEntity.ok(updatedSchedule);
+    }
+
     @GetMapping
     public ResponseEntity<Iterable<ScheduleEntity>> list() {
         Iterable<ScheduleEntity> customers = scheduleService.getAll();
